@@ -1,9 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
-import reactLogo from '../assets/react.svg'
 import './App.css'
 import { useStatistics } from './useStatistics';
 import { Chart } from './Chart';
-import type { Props } from 'recharts/types/container/Surface';
 
 function App() {
   const staticData = useStaticData();
