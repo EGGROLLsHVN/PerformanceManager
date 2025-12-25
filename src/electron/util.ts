@@ -26,7 +26,7 @@ export function ipcWebContentsSend<Key extends keyof EventPayloadMapping>(key: s
 
 export function validateEventFrame(frame: WebFrameMain) {
     // Allow Vite dev server in development 
-    console.log(frame.url);
+    // console.log(frame.url);
 
     if (isDev() && new URL(frame.url).host === 'localhost:5123') {
         return;

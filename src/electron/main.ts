@@ -22,6 +22,7 @@ app.on("ready", ()=> {
         width: windowWidth, 
         height: windowHeight,
         fullscreenable: false,
+        resizable: false,
 
         webPreferences: {
             preload: getPreloadPath(),
@@ -52,7 +53,11 @@ app.on("ready", ()=> {
                 mainWindow.minimize();
                 break;
             case "MAXIMIZE":
-                mainWindow.maximize();
+                if (mainWindow.isMaximized()) {
+                    mainWindow.unmaximize();
+                } else {
+                    mainWindow.maximize();
+                }
                 break;
         }
     });
